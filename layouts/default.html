@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title><%= @item[:title] || 'Peter Cooper' %></title>
+    <link rel="stylesheet" type="text/css" href="/style.css" media="screen" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/svg/svg.js"></script>
+    <meta name="viewport" content="width=880" />
+  </head>
+  <body class="<%= @item[:body_class] %>">
+    <div id="header">
+      <div class="inner">
+      <ul>
+        <li class="title"><a href="/">Redis Book</a></li>
+        <li class="home"><a href="/">Home</a></li>
+        <li class="home"><a href="/">Contents</a></li>
+      </ul>
+      </div>
+    </div>
+    
+    <div id="page">
+      <div id="main"> 
+        <%= yield %>
+      </div>
+      <div id="footer">
+        Last updated: <%= @item.mtime.strftime("%B %d, %Y") %> by Peter Cooper
+      </div>
+    </div>
+  </body>
+</html>
