@@ -37,7 +37,7 @@ body
 #page, #header .inner
   margin: 0px 11.7% 2em 23.4%
   min-width: 640px
-  max-width: 900px
+  //max-width: 850px
   position: relative
 
 #main ol, #main ul

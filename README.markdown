@@ -12,6 +12,11 @@ upon content in HTML files found in the `content/` directory. The book's source 
 documents that also contain special book-specific directives that I'm currently calling "Pebo" syntax. [ASCIIDoc](http://www.methods.co.nz/asciidoc/)
 is being considered as a long-term solution, however.
 
+Key ambitions for the book are to be transparent (public GitHub repo with latest content), open (non-commercial Creative Commons license and allowing changes via GitHub forks),
+and to make for good reading and learning (including SVG figures - some interactive, hopefully). I will be 
+selling an attractive PDF and print book later on down the line while having the same content available online for free, rather
+like Michael Hartl's [RailsTutorial.org.](http://railstutorial.org/)
+
 Status
 ------
 
