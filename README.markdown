@@ -27,6 +27,6 @@ Building The Book For Yourself
 ------------------------------
 
 * Install the `kramdown` and `nanoc` gems
-* To compile book and assets into `output/`: `rake`
-* From the root of this directory: `nanoc aco` will bring up a server at `http://127.0.0.1:3000/`
+* Run `rake` to compile book and assets into `output/`
+* From the root of this directory, `nanoc aco` will bring up a server at [http://127.0.0.1:3000/](http://127.0.0.1:3000/)
   *(Note: You will need to run `rake` in order to have the assets copied into `output/` for `nanoc aco` to use.)*

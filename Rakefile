@@ -8,6 +8,16 @@ task :compile do
   sh "nanoc3 co"
 end
 
-task :build => [ :compile, :copy_assets ]
+task :github do
+  sh "git push origin master"
+end
+
+task :upload do
+  sh "rake deploy:rsync"
+end
+
+task :build => [ :clean, :compile, :copy_assets ]
+
+task :deploy => [ :build, :github, :upload ]
 
 task :default => :build
