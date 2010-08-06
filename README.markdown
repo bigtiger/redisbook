@@ -10,7 +10,7 @@ memory based, persistent, key-value data storage system built by Salvatore Sanfi
 This repository contains a [nanoc](http://nanoc.stoneship.org/) project that builds an HTML version of the book, based
 upon content in HTML files found in the `content/` directory. The book's source HTML files are nanoc-style [Markdown](http://daringfireball.net/projects/markdown/)
 documents that also contain special book-specific directives that I'm currently calling "Pebo" syntax. [ASCIIDoc](http://www.methods.co.nz/asciidoc/)
-is being considered as a long-term solution, however.
+is being considered as a destination format, however.
 
 Key ambitions for the book are to be transparent (public GitHub repo with latest content), open (non-commercial Creative Commons license and allowing changes via GitHub forks),
 and to make for good reading and learning (including SVG figures - some interactive, hopefully). I will be 
@@ -21,3 +21,12 @@ Status
 ------
 
 The project has only just been started after a little offline planning. There is nothing to see yet. *August 6, 2010*
+
+
+Building The Book For Yourself
+------------------------------
+
+* Install the `kramdown` and `nanoc` gems
+* To compile book and assets into `output/`: `rake`
+* From the root of this directory: `nanoc aco` will bring up a server at `http://127.0.0.1:3000/`
+  *(Note: You will need to run `rake` in order to have the assets copied into `output/` for `nanoc aco` to use.)*
