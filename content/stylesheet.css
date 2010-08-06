@@ -48,13 +48,13 @@ body
 
 #header
   width: 100%
-  padding: 8px 0px 3px 0px
+  padding: 6px 0px 5px 0px
   color: #fff
   background-color: $theme_color
   height: 28px
   border-bottom: 6px solid lighten($theme_color, 30%)
   font-family: $header_fonts
-  font-size: 0.9em
+  //font-size: 0.9em
   .inner
     ul
       list-style-type: none
