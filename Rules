@@ -14,34 +14,15 @@ compile '/stylesheet/' do
   filter :sass
 end
 
-compile '/javascript/*' do
-end
-
-compile '/img/*' do
-end
-
-#compile '/img/*', :rep => :smaller do
-#  filter :resize, :width => 400
-#end
-
 compile '*' do
   filter :erb
   filter :pebo
   filter :kramdown
-  #filter :toc
   layout item[:content_class] || 'default'
 end
 
 route '/stylesheet/' do
   '/style.css'
-end
-
-route '/img/*' do
-  item.identifier.chop + '.' + item[:extension]
-end
-
-route '/javascript/*' do
-  item.identifier.chop + '.' + item[:extension]
 end
 
 route '*' do
