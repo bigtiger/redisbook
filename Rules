@@ -18,7 +18,7 @@ compile '*' do
   filter :erb
   filter :pebo
   filter :kramdown
-  layout item[:content_class] || 'default'
+  layout 'default' #item[:content_class] || 'default'
 end
 
 route '/stylesheet/' do

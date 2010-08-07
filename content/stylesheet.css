@@ -14,7 +14,7 @@ $theme_color: #dd2200
 $alt_color: #356938    // actual redis logo green
 $pale_color: #ccc
 $link_color: #04c
-$link_color: $alt_color
+//$link_color: $alt_color
 $header_fonts: "Museo Slab", "Myriad Pro", "Helvetica Neue", Helvetica, "Helvetica Neue", Arial, sans-serif
 $body_fonts: Georgia, Palatino, Times, "Times New Roman", serif
 $monospace_fonts: Menlo, Monaco, "Liberation Mono", "Droid Sans Mono", Courier, monospace
@@ -87,8 +87,9 @@ body
           &:hover
             text-decoration: underline
       
-
-
+BODY.contents #header .inner ul li.contents a, BODY.home #header .inner ul li.home a
+  text-decoration: none
+  color: #ff0
 
 #footer
   font-family: $header_fonts
@@ -114,7 +115,11 @@ h2
   
 h3
   font-size: 1.1em
-  
+
+h4
+  font-size: 0.9em
+  text-transform: uppercase
+  color: $theme_color  
 
 a
   color: $link_color
@@ -123,7 +128,7 @@ a
 a:hover
   text-decoration: underline
 
-p
+p, .note
   margin: 1.2em 0em 1.2em 0em
   text-align: justify
   
@@ -133,28 +138,32 @@ p
 p+p
   text-indent: 1em
   margin-top: 0em
-    
-blockquote, .code
+
+blockquote, .highlight
   padding: 1.0em
   margin: 1.2em 0em
   background-color: #eee
   font-family: $header_fonts
-  //font-style: italic
   p:first-child
     margin-top: 0px
   p:last-child
     margin-bottom: 0px
-    
-.code
-  background-color: lighten($theme_color, 52%)
-  font-size: 15px
-  line-height: 21px
-  color: darken($theme_color, 20%)
-  code
-    font-family: $monospace_fonts
-    
-    
-    
+
+.note
+  background-color: inherit
+  position: relative
+  margin: 1.2em 0em
+  background-color: #eee
+  .content
+    padding: 0.65em
+  .icon
+    position: absolute
+    left: -60px
+  &.type-ok
+    background-color: #cf9
+  &.type-warning
+    background-color: #ff0
+
 BODY.book
   H1
     padding-bottom: 0.4ex
@@ -163,8 +172,7 @@ BODY.book
     padding-left: 18.08%
     margin-bottom: 2.5ex
     font-size: 2.4em
-    //margin-top: 0.5em
-    .chapter
+    .section
       float: left
       margin-left: -18.08%
   H2
@@ -173,15 +181,207 @@ BODY.book
     margin-top: 3.5ex
     font-size: 1.5em
     margin-left: -18.08%
-    .chapter
+    .section
       display: inline
       margin-right: 1em
   H3
     font-size: 1.2em
+
+DIV.box
+  padding: 1em
+  background-color: #eee
+  border: 1px solid #ccc
+  margin-top: 1em
+  margin-bottom: 0em
+  &.warning
+    background-color: #ff0
+    
+a.level1
+  font-size: 1.1em
+
+#main .floating-box
+  float: right
+  max-width: 340px
+  margin-left: 2em
+  margin-bottom: 2em
+  background-color: #eee
+  padding: 1em
+  h3
+    margin-top: 0px
+  ul
+    list-style-type: none
+    margin-left: 0px
+    padding-left: 0px
+    li
+      margin-left: 0px
+      padding-left: 0px
+      
 
 .figure
   .caption
     counter-increment: figure
   .caption:before
     content: "Figure " counter(figure) ". "
+    font-weight: bold
+    
+.highlight
+  background-color: lighten($theme_color, 52%)
+  font-size: 15px
+  line-height: 21px
+  color: darken($theme_color, 20%)
+  pre
+    font-family: $monospace_fonts
+  .hll
+    background-color: #ffffcc
+  .c
+    color: #808080
+  .err
+    color: #F00000
+    background-color: #F0A0A0
+  .k
+    color: #008000
+    font-weight: bold
+  .o
+    color: #303030
+  .cm
+    color: #808080
+  .cp
+    color: #507090
+  .c1
+    color: #808080
+  .cs
+    color: #cc0000
+    font-weight: bold
+  .gd
+    color: #A00000
+  .ge
+    font-style: italic
+  .gr
+    color: #FF0000
+  .gh
+    color: #000080
+    font-weight: bold
+  .gi
+    color: #00A000
+  .go
+    color: #808080
+  .gp
+    color: #c65d09
+    font-weight: bold
+  .gs
+    font-weight: bold
+  .gu
+    color: #800080
+    font-weight: bold
+  .gt
+    color: #0040D0
+  .kc
+    color: #008000
+    font-weight: bold
+  .kd
+    color: #008000
+    font-weight: bold
+  .kn
+    color: #008000
+    font-weight: bold
+  .kp
+    color: #003080
+    font-weight: bold
+  .kr
+    color: #008000
+    font-weight: bold
+  .kt
+    color: #303090
+    font-weight: bold
+  .m
+    color: #6000E0
+    font-weight: bold
+  .s
+    background-color: #fff0f0
+  .na
+    color: #0000C0
+  .nb
+    color: #007020
+  .nc
+    color: #B00060
+    font-weight: bold
+  .no
+    color: #003060
+    font-weight: bold
+  .nd
+    color: #505050
+    font-weight: bold
+  .ni
+    color: #800000
+    font-weight: bold
+  .ne
+    color: #F00000
+    font-weight: bold
+  .nf
+    color: #0060B0
+    font-weight: bold
+  .nl
+    color: #907000
+    font-weight: bold
+  .nn
+    color: #0e84b5
+    font-weight: bold
+  .nt
+    color: #007000
+  .nv
+    color: #906030
+  .ow
+    color: #000000
+    font-weight: bold
+  .w
+    color: #bbbbbb
+  .mf
+    color: #6000E0
+    font-weight: bold
+  .mh
+    color: #005080
+    font-weight: bold
+  .mi
+    color: #0000D0
+    font-weight: bold
+  .mo
+    color: #4000E0
+    font-weight: bold
+  .sb
+    background-color: #fff0f0
+  .sc
+    color: #0040D0
+  .sd
+    color: #D04020
+  .s2
+    background-color: #fff0f0
+  .se
+    color: #606060
+    font-weight: bold
+    background-color: #fff0f0
+  .sh
+    background-color: #fff0f0
+  .si
+    background-color: #e0e0e0
+  .sx
+    color: #D02000
+    background-color: #fff0f0
+  .sr
+    color: #000000
+    background-color: #fff0ff
+  .s1
+    background-color: #fff0f0
+  .ss
+    color: #A06000
+  .bp
+    color: #007020
+  .vc
+    color: #306090
+  .vg
+    color: #d07000
+    font-weight: bold
+  .vi
+    color: #3030B0
+  .il
+    color: #0000D0
     font-weight: bold

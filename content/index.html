@@ -6,11 +6,20 @@ body_class: home
 The Redis Book
 ==============
 
+<div class="floating-box">
+  <h3>Chapters</h3>
+  <ul>
+<% chapters.each do |chapter| %>
+  <li><%= chapter[:chapter] %>&emsp;<%= link_to chapter[:title], chapter.rep_named(:default) %></li>
+<% end %>
+</ul>
+<p style="font-size: 0.8em">See the <a href="/contents/">Table of Contents</a> for more.</p></div>
+
 What?
 -----
 
 The Redis book is an attempt at creating the definitive tutorial and reference guide to [Redis](http://code.google.com/p/redis/), an open-source, 
-memory based, persistent, key-value data storage system built by Salvatore Sanfilippo of VMware.
+memory based, persistent, key-value data storage system built by Salvatore Sanfilippo of VMware. {body_class}
 
 This repository contains a [nanoc](http://nanoc.stoneship.org/) project that builds an HTML version of the book, based
 upon content in HTML files found in the `content/` directory. The book's source HTML files are nanoc-style [Markdown](http://daringfireball.net/projects/markdown/)
@@ -27,5 +36,5 @@ If you want to check out *something* useful about Redis, see [my Redis presentat
 Status
 ------
 
-The project has only just been started after a little offline planning. The only thing worth looking at so far is the <%= link_to 'Formatting demonstration page', 'page1/' %>! *August 6, 2010*
+The project has only just been started after a little offline planning. The only thing worth looking at so far is the <%= link_to 'Formatting demonstration page', 'ch1-introduction/' %>! *August 6, 2010*
 

@@ -1,0 +1,20 @@
+--- 
+title: Table of Contents
+body_class: meta contents
+content_class: meta
+---
+
+Table of Contents
+=================
+
+<ul>
+<% chapters.each do |chapter| %>
+  <li><%= chapter[:chapter] %>&emsp;<%= link_to chapter[:title], chapter.rep_named(:default), :class => 'level1' %><br />
+    <ul>
+      <% subsections_of_chapter(chapter).each do |section| %>
+        <li><%= chapter[:chapter] %>.<%= section[:number] %>&emsp;<%= link_to section[:title], chapter.path + "#" + section[:anchor] %></li>
+      <% end %>
+    </ul>
+  </li>
+<% end %>
+</ul>
