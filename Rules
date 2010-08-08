@@ -30,13 +30,13 @@ route '*' do
   item.identifier + 'index.html'
   #puts item.identifier
   #if item.identifier == '/'
-  #  # if item is index page 
+  #  # if item is index page
   #  '/index.html'
   #elsif File.directory?(File.expand_path(File.dirname(__FILE__)) + "/content/" + item.identifier.chop)
   #  item.identifier + "index.html"
-  #else 
-  #  # routes for the rest 
-  #  item.identifier.chop + '.html' 
+  #else
+  #  # routes for the rest
+  #  item.identifier.chop + '.html'
   #end
 end
 
