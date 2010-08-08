@@ -12,6 +12,10 @@ task :github do
   sh "git push origin master"
 end
 
+task :start_server do
+  sh "nanoc aco"
+end
+
 task :upload do
   sh "rake deploy:rsync"
 end
@@ -19,5 +23,7 @@ end
 task :build => [ :clean, :compile, :copy_assets ]
 
 task :deploy => [ :build, :github, :upload ]
+
+task :serve => [ :build, :start_server ]
 
 task :default => :build

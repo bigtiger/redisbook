@@ -28,5 +28,4 @@ Building The Book For Yourself
 * Install the `kramdown`, `nanoc`, and `nokogiri` gems
 * Install [Pygments](http://pygments.org/download/) for syntax highlighting - `sudo easy_install Pygments` may get you there on OS X and Linux.
 * Run `rake` to compile book and assets into `output/`
-* From the root of this directory, `nanoc aco` will bring up a server at [http://127.0.0.1:3000/](http://127.0.0.1:3000/)
-  *(Note: You will need to run `rake` in order to have the assets copied into `output/` for `nanoc aco` to use.)*
+* Run `rake serve` to build the book and serve it at [http://127.0.0.1:3000/](http://127.0.0.1:3000/)
