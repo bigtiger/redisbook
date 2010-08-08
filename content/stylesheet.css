@@ -92,6 +92,7 @@ BODY.contents #header .inner ul li.contents a, BODY.home #header .inner ul li.ho
   color: #ff0
 
 #footer
+  text-align: right
   font-family: $header_fonts
   margin-top: 2em
   border-top: 8px solid $theme_color
