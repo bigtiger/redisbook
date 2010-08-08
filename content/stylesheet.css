@@ -132,12 +132,12 @@ p, .note
   margin: 1.2em 0em 1.2em 0em
   text-align: justify
   
-p
-  margin-bottom: 0em
-  
-p+p
-  text-indent: 1em
-  margin-top: 0em
+//p
+//  margin-bottom: 0em
+//  
+//p+p
+//  text-indent: 1em
+//  margin-top: 0em
 
 blockquote, .highlight
   padding: 1.0em
@@ -153,16 +153,29 @@ blockquote, .highlight
   background-color: inherit
   position: relative
   margin: 1.2em 0em
-  background-color: #eee
+  //background-color: #eee
   .content
-    padding: 0.65em
+    padding: 14px 0px
+    min-height: 32px
   .icon
     position: absolute
-    left: -60px
+    left: -66px
+    top: 4px
+  &.type-ok, &.type-warning, &.type-note
+    padding-left: 12px
+    padding-right: 12px
+  &.type-info
+    border-top: 3px solid $pale_color
+    border-bottom: 3px solid $pale_color
+  &.type-note
+    background-color: #eee
+    background: -webkit-gradient(linear, right top, left top, from(#fff), to(#eee))
   &.type-ok
     background-color: #cf9
+    background: -webkit-gradient(linear, right top, left top, from(#fff), to(#cf9))
   &.type-warning
     background-color: #ff0
+    
 
 BODY.book
   H1
@@ -190,7 +203,7 @@ BODY.book
 DIV.box
   padding: 1em
   background-color: #eee
-  border: 1px solid #ccc
+  border: 1px solid #333
   margin-top: 1em
   margin-bottom: 0em
   &.warning
@@ -199,13 +212,12 @@ DIV.box
 a.level1
   font-size: 1.1em
 
-#main .floating-box
+#main .floating-right
   float: right
-  max-width: 340px
+  max-width: 250px
   margin-left: 2em
   margin-bottom: 2em
-  background-color: #eee
-  padding: 1em
+  font-size: 0.8em
   h3
     margin-top: 0px
   ul
@@ -215,6 +227,9 @@ a.level1
     li
       margin-left: 0px
       padding-left: 0px
+  .box
+    background-color: #eee
+    padding: 1em
       
 
 .figure

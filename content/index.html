@@ -3,38 +3,44 @@ title: Redis Book
 body_class: home
 ---
 
-The Redis Book
-==============
+WARNING: This book is not *anywhere* near done. In fact, it's barely been begun! If you want to keep up to date with progress, follow [the author's blog](http://peterc.org/blog/) or add this page to Google Reader and it'll let you know of any updates.
 
-<div class="floating-box">
+<div class="floating-right">
+  <img src="/images/plainbook.jpg" />
+  <div class="box">
   <h3>Chapters</h3>
   <ul>
 <% chapters.each do |chapter| %>
   <li><%= chapter[:chapter] %>&emsp;<%= link_to chapter[:title], chapter.rep_named(:default) %></li>
 <% end %>
-</ul>
-<p style="font-size: 0.8em">See the <a href="/contents/">Table of Contents</a> for more.</p></div>
+  </ul>
+  </div>
+<p style="font-size: 0.9em">See the <a href="/contents/">Table of Contents</a> for more.</p></div>
 
-What?
------
+The Redis Book
+==============
 
-The Redis book is an attempt at creating the definitive tutorial and reference guide to [Redis](http://code.google.com/p/redis/), an open-source, 
-memory based, persistent, key-value data storage system built by Salvatore Sanfilippo of VMware. {body_class}
+"The Redis Book" (*real title yet to be decided*) will be a *comprehensive tutorial and reference guide* to [Redis](http://code.google.com/p/redis/), an open source, 
+memory based, persistent, key-value data storage system invented by [Salvatore Sanfilippo](http://twitter.com/antirez).
 
-This repository contains a [nanoc](http://nanoc.stoneship.org/) project that builds an HTML version of the book, based
-upon content in HTML files found in the `content/` directory. The book's source HTML files are nanoc-style [Markdown](http://daringfireball.net/projects/markdown/)
-documents that also contain special book-specific directives that I'm currently calling "Pebo" syntax. [ASCIIDoc](http://www.methods.co.nz/asciidoc/)
-is being considered as a long-term solution, however.
+Key ambitions for the book are:
 
-Key ambitions for the book are to be transparent (public GitHub repo with latest content), open (non-commercial Creative Commons license and allowing changes via GitHub forks),
-and to make for good reading and learning (including SVG figures - some interactive, hopefully). I will be 
-selling an attractive PDF and print book later on down the line while having the same content available online for free, rather
+* transparency ([public GitHub repo](http://github.com/peterc/redisbook))
+* openness (non-commercial Creative Commons license and edits/fixes welcomed via GitHub)
+* to be both interesting and educational (interactive SVG figures in the works!)
+
+Longer term, I will be selling an attractive PDF and print book later on down the line while having the same content available online for free, rather
 like Michael Hartl's [RailsTutorial.org.](http://railstutorial.org/)
 
-If you want to check out *something* useful about Redis, see [my Redis presentation (PDF).](http://no.gd/redis-presentation.pdf)
+As of August 2010, there is little to see, but if you want to check out *something* useful about Redis, see [my Redis presentation (PDF).](http://no.gd/redis-presentation.pdf)
 
 Status
 ------
 
-The project has only just been started after a little offline planning. The only thing worth looking at so far is the <%= link_to 'Formatting demonstration page', 'ch1-introduction/' %>! *August 6, 2010*
+.August 8, 2010
+Work on the templating and building system is complete enough for now. My next task is bringing some of my planned structure into play so I can begin drafting content.
+
+.August 6, 2010
+The project has only just been started after a little offline planning. The only thing worth looking at so far is the <%= link_to 'Formatting demonstration page', 'ch1-introduction/' %>! 
+
 
