@@ -4,6 +4,14 @@ class PeboFilter < Nanoc3::Filter
   
   def run(content, params = {})
     
+    if @item[:status] =~ /\bnotstarted\b/
+      content = %{WARNING: This document has <em>not yet been started</em> and is here for organizational purposes only.\n} + content
+    end
+
+    if @item[:status] =~ /\incomplete\b/
+      content = %{WARNING: Beware that this document has been started but is *incomplete.*\n} + content
+    end
+    
     content.gsub!(/^(NOTE|OK|HELP|INFO|WIZARD|WARNING|TERMINAL|BOOKS|CONFIG|BAD|MATH)\:\s+(.*)$/) { %{<div class="note type-#{$1.downcase}"><img src="/pebo/#{$1.downcase}.png" class="icon" /><div class="content" markdown="span">#{$2}</div></div>} }
     
     # Support ASCIIDoc style {title} interpolations
@@ -46,14 +54,6 @@ class PeboFilter < Nanoc3::Filter
           part
         end
       end
-    end
-    
-    if @item[:status] =~ /\bnotstarted\b/
-      content = %{<div class="box warning">This document has <em>not yet been started</em> and is here for organizational purposes only.</div>} + content
-    end
-
-    if @item[:status] =~ /\incomplete\b/
-      content = %{<div class="box warning">Beware that this document has been started but is <em>incomplete.</em></div>} + content
     end
     
     content

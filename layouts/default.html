@@ -15,6 +15,7 @@
         <li class="title"><a href="/">The Redis Book</a></li>
         <li class="home"><a href="/">Home</a></li>
         <li class="contents"><%= link_to "Contents", "/contents/" %></li>
+        <li><a href="http://github.com/peterc/redisbook">GitHub</a></li>
       </ul>
       </div>
     </div>
@@ -24,6 +25,8 @@
         <%= yield %>
       </div>
       <div id="footer">
+        <div style="float: right; text-align: right">Copyright &copy; 2010 Peter Cooper<br />
+        <div style="font-size: 0.8em; line-height: 1.2em;">This work is <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">CC Attribution-NonCommercial-ShareAlike 3.0</a> licensed.<br /><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0; margin-top: 6px" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a></div></div>
         Last updated: <%= @item.mtime.strftime("%B %d, %Y") %> by Peter Cooper
       </div>
     </div>

@@ -174,7 +174,7 @@ blockquote, .highlight
     background-color: #cf9
     background: -webkit-gradient(linear, right top, left top, from(#fff), to(#cf9))
   &.type-warning
-    background-color: #ff0
+    background-color: #ff4
     
 
 BODY.book

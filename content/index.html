@@ -3,7 +3,7 @@ title: Redis Book
 body_class: home
 ---
 
-WARNING: This book is not *anywhere* near done. In fact, it's barely been begun! If you want to keep up to date with progress, follow [the author's blog](http://peterc.org/blog/) or add this page to Google Reader and it'll let you know of any updates.
+WARNING: This book is not *anywhere* near done &mdash; it's barely begun! If you want to keep up with progress, add this page to Google Reader and it'll notify you of updates.
 
 <div class="floating-right">
   <img src="/images/plainbook.jpg" />
@@ -11,8 +11,8 @@ WARNING: This book is not *anywhere* near done. In fact, it's barely been begun!
   <h3>Chapters</h3>
   <ul>
 <% chapters.each do |chapter| %>
-  <li><%= chapter[:chapter] %>&emsp;<%= link_to chapter[:title], chapter.rep_named(:default) %></li>
-<% end %>
+  <li><%= chapter[:chapter] %>&emsp;<%= chapter[:no_link] ? chapter[:title] : link_to(chapter[:title], chapter.rep_named(:default)) %></li>
+<% end %><!--  -->
   </ul>
   </div>
 <p style="font-size: 0.9em">See the <a href="/contents/">Table of Contents</a> for more.</p></div>
@@ -25,7 +25,7 @@ memory based, persistent, key-value data storage system invented by [Salvatore S
 
 Key ambitions for the book are:
 
-* transparency ([public GitHub repo](http://github.com/peterc/redisbook))
+* transparency ([GitHub repo](http://github.com/peterc/redisbook))
 * openness (non-commercial Creative Commons license and edits/fixes welcomed via GitHub)
 * to be both interesting and educational (interactive SVG figures in the works!)
 
@@ -41,6 +41,6 @@ Status
 Work on the templating and building system is complete enough for now. My next task is bringing some of my planned structure into play so I can begin drafting content.
 
 .August 6, 2010
-The project has only just been started after a little offline planning. The only thing worth looking at so far is the <%= link_to 'Formatting demonstration page', 'ch1-introduction/' %>! 
+The project has only just been started after a little offline planning. 
 
 

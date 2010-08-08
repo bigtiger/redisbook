@@ -9,10 +9,10 @@ Table of Contents
 
 <ul>
 <% chapters.each do |chapter| %>
-  <li><%= chapter[:chapter] %>&emsp;<%= link_to chapter[:title], chapter.rep_named(:default), :class => 'level1' %><br />
+  <li><%= chapter[:chapter] %>&emsp;<%= chapter[:no_link] ? chapter[:title] : link_to(chapter[:title], chapter.rep_named(:default), :class => 'level1') %><br />
     <ul>
       <% subsections_of_chapter(chapter).each do |section| %>
-        <li><%= chapter[:chapter] %>.<%= section[:number] %>&emsp;<%= link_to section[:title], chapter.path + "#" + section[:anchor] %></li>
+        <li><%= chapter[:chapter] %>.<%= section[:number] %>&emsp;<%= chapter[:no_link] ? section[:title] : link_to(section[:title], chapter.path + "#" + section[:anchor]) %></li>
       <% end %>
     </ul>
   </li>
