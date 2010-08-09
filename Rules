@@ -11,6 +11,7 @@
 #   because “*” matches zero or more characters.
 
 compile '/stylesheet/' do
+  filter :erb
   filter :sass
 end
 

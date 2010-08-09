@@ -43,3 +43,24 @@ data_sources:
 deploy:
   default:
     dst: "sherman:/srv/www/redisbook.org/public_html"
+
+book:
+  title: "The Redis Book"
+  head: |-
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/svg/svg.js"></script>
+    <meta name="viewport" content="width=880" />
+  header_links: |-
+    <li><a href="http://github.com/peterc/redisbook">GitHub</a></li>
+  footer: |-
+    <div style="font-size: 0.8em; line-height: 1.4em; color: #666"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0; margin-top: 6px" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />Copyright &copy; 2010 Peter Cooper</div>
+  theme_color: "#d20"
+  alt_color: "#356938"
+  text_color: "#111"
+  link_color: "#04c"
+  pale_color: "#bbb"
+  body_classes: 
+  header_fonts: "\"Museo Slab\", \"Myriad Pro\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+  body_fonts: "Georgia, Palatino, Times, \"Times New Roman\", serif"
+  monospace_fonts: "Menlo, Monaco, \"Liberation Mono\", \"Droid Sans Mono\", Courier, monospace"
+    

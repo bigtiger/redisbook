@@ -2,32 +2,31 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title><%= @item[:title] || 'Peter Cooper' %></title>
+    <title><%= @item[:title] %></title>
     <link rel="stylesheet" type="text/css" href="/style.css" media="screen" />
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-    <script type="text/javascript" src="/svg/svg.js"></script>
-    <meta name="viewport" content="width=880" />
+    <%= @config[:book][:head] %>
   </head>
-  <body class="<%= @item[:body_class] %>">
+  <body class="<%= @item[:body_class] %> <%= @config[:book][:body_classes] %>">
     <div id="header">
       <div class="inner">
       <ul>
-        <li class="title"><a href="/">The Redis Book</a></li>
+        <li class="title"><a href="/"><%= @config[:book][:title] %></a></li>
         <li class="home"><a href="/">Home</a></li>
         <li class="contents"><%= link_to "Contents", "/contents/" %></li>
-        <li><a href="http://github.com/peterc/redisbook">GitHub</a></li>
+        <%= @config[:book][:header_links] %>
       </ul>
       </div>
     </div>
     
     <div id="page">
-      <div id="main"> 
+      <div id="main">
         <%= yield %>
       </div>
       <div id="footer">
-        Last updated: <%= @item.mtime.strftime("%B %d, %Y") %> by Peter Cooper<br />
-        <div style="font-size: 0.8em; line-height: 1.4em; color: #666"><!-- This work is <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">CC Attribution-NonCommercial-ShareAlike 3.0</a> licensed.<br /> --><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0; margin-top: 6px" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />Copyright &copy; 2010 Peter Cooper</div>
+        Last updated: <%= @item.mtime.strftime("%B %d, %Y") %><br />
+        <%= @config[:book][:footer] %>
       </div>
     </div>
+  <%= @config[:book][:end_of_body] %>
   </body>
 </html>
